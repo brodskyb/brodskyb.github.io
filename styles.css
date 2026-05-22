@@ -8,6 +8,10 @@
   --accent: #7dd3fc;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -117,7 +121,7 @@ main {
   font-size: 0.82rem;
   font-weight: 750;
   letter-spacing: 0;
-  text-transform: uppercase;
+  text-transform: lowercase;
 }
 
 h1,
@@ -235,6 +239,45 @@ h3 {
   padding: 28px 0;
   color: var(--muted);
   font-size: 0.9rem;
+}
+
+::view-transition-old(root) {
+  animation: tab-slide-out 240ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+::view-transition-new(root) {
+  animation: tab-slide-in 240ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes tab-slide-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-42px);
+  }
+}
+
+@keyframes tab-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(42px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 1ms;
+  }
 }
 
 @media (max-width: 640px) {
