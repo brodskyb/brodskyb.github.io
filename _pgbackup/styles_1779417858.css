@@ -96,21 +96,6 @@ main {
   padding: 72px 0;
 }
 
-.home-page {
-  justify-items: center;
-  text-align: center;
-}
-
-.profile-photo {
-  width: clamp(140px, 20vw, 184px);
-  height: clamp(140px, 20vw, 184px);
-  margin-bottom: 28px;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.32);
-  object-fit: cover;
-}
-
 .eyebrow {
   margin: 0 0 14px;
   color: var(--accent);
