@@ -249,6 +249,27 @@ h3 {
   margin-bottom: 0;
 }
 
+.app-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.app-store-badge {
+  display: inline-flex;
+  overflow: hidden;
+  width: 150px;
+  height: 50px;
+  border-radius: 8px;
+}
+
+.app-store-badge img {
+  display: block;
+  width: 150px;
+  height: 50px;
+}
+
 .text-link {
   color: var(--accent);
   font-weight: 750;
@@ -343,7 +364,13 @@ h3 {
 
   .app-row {
     grid-template-columns: 1fr;
-    gap: 8px;
+    gap: 14px;
+  }
+
+  .app-actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
   }
 
   .actions,
