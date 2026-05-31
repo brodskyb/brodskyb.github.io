@@ -6,9 +6,9 @@
         <meta name="description" content="about brandon brodsky and brodskyb dev."/>
         <title>about | brodskyb dev</title>
         <link rel="icon" type="image/png" href="/images/favicon.png" />
-        <link rel="stylesheet" href="/styles.css?v=20260530"/>
+        <link rel="stylesheet" href="/styles.css?v=20260530-2"/>
     </head>
-    <body style="text-align: left; margin-top: 0px;">
+    <body>
         <header class="site-header" aria-label="Primary navigation">
             <nav class="nav">
                 <a class="brand" href="/" aria-label="brodskyb dev home">brodskyb dev</a>
@@ -20,11 +20,38 @@
                 </div>
             </nav>
         </header>
-        <main style="padding-top: 80px;"> So im gonna keep it honest here, I really have very little idea what I am doing here. I just got a new computer and have always had some minor interest in coding. Back in high school I did take a Java class which I did very much enjoy, but college was a different story. Now just doing this as a hobby and seeing what I might learn. If you read this pls send dog/cat pics to brandon@brodskyb.dev to make my day :)<br>
-            <br>Thanks<br>Brandon
+        <main>
+            <section class="page about-page">
+                <p class="eyebrow">scratchpad</p>
+                <h1>About</h1>
+                <article class="scratchpad" aria-label="random thoughts and comments">
+                    <pre id="scratchpad-content">Loading scratchpad...</pre>
+                    <noscript>
+                        <p><a class="text-link" href="/about/scratchpad.txt">Open the scratchpad text file</a></p>
+                    </noscript>
+                </article>
+            </section>
         </main>
         <footer class="site-footer">
             <span>&copy; 2026 Brandon Brodsky</span>
         </footer>
+        <script>
+            const scratchpad = document.getElementById("scratchpad-content");
+
+            fetch(`/about/scratchpad.txt?v=${Date.now()}`)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Scratchpad not found");
+                    }
+
+                    return response.text();
+                })
+                .then((text) => {
+                    scratchpad.textContent = text.trim();
+                })
+                .catch(() => {
+                    scratchpad.textContent = "Could not load the scratchpad right now.";
+                });
+        </script>
     </body>
 </html>
