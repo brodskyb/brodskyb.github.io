@@ -250,7 +250,7 @@ h3 {
 
 .app-row {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 20px;
   padding: 18px 0;
@@ -263,6 +263,25 @@ h3 {
 
 .app-row p {
   margin-bottom: 0;
+}
+
+.app-icon-link {
+  display: inline-flex;
+  border-radius: 22px;
+  text-decoration: none;
+}
+
+.app-icon-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.app-icon {
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: 22px;
+  box-shadow: 0 14px 42px rgba(0, 0, 0, 0.34);
 }
 
 .app-actions {
@@ -289,6 +308,22 @@ h3 {
 .app-detail {
   align-content: start;
   padding-top: 72px;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.app-title h1 {
+  margin-bottom: 0;
+}
+
+.app-icon.large {
+  width: 112px;
+  height: 112px;
+  border-radius: 26px;
 }
 
 .app-detail-grid {
@@ -454,6 +489,12 @@ h3 {
     gap: 14px;
   }
 
+  .app-icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 18px;
+  }
+
   .app-actions {
     align-items: flex-start;
     flex-direction: column;
@@ -463,6 +504,18 @@ h3 {
   .app-detail-grid {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .app-title {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .app-icon.large {
+    width: 96px;
+    height: 96px;
+    border-radius: 22px;
   }
 
   .scratchpad {
