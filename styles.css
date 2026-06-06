@@ -157,6 +157,16 @@ h3 {
   font-size: 1.12rem;
 }
 
+.heading-link {
+  text-decoration: none;
+}
+
+.heading-link:hover,
+.heading-link:focus-visible {
+  color: var(--accent);
+  outline: none;
+}
+
 .lead,
 .page p {
   max-width: 680px;
@@ -274,6 +284,54 @@ h3 {
   display: block;
   width: 150px;
   height: 50px;
+}
+
+.app-detail {
+  align-content: start;
+  padding-top: 72px;
+}
+
+.app-detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  gap: 40px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.app-detail-copy {
+  max-width: 680px;
+}
+
+.app-detail-copy p,
+.app-detail-copy li {
+  color: var(--muted);
+}
+
+.app-detail-copy ul {
+  margin: 0 0 28px;
+  padding-left: 22px;
+}
+
+.app-detail-copy li + li {
+  margin-top: 8px;
+}
+
+.support-panel {
+  align-self: start;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+}
+
+.support-panel h2 {
+  margin-bottom: 12px;
+  font-size: 1.12rem;
+}
+
+.support-panel .app-store-badge {
+  margin-bottom: 16px;
 }
 
 .scratchpad {
@@ -400,6 +458,11 @@ h3 {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
+  }
+
+  .app-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 
   .scratchpad {
